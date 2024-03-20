@@ -1,0 +1,58 @@
+---
+import { getRandomUnsplashImage } from "@/utils/get-random";
+import Marquee from "./marquee.astro";
+import MarqueeSlide from "./marquee-slide.astro";
+
+const repeat = (times: number) => new Array(times).fill("");
+---
+
+<section class="section py-28 space-y-28">
+  <div class="space-y-8">
+    <h1 class="mx-auto text-7xl font-semibold text-center">
+      Video hosting made easy
+    </h1>
+    <p class="mx-auto max-w-[45rem] text-2xl text-center">
+      Join thousands of businesses and creators who trust Streamable to upload
+      and share their videos.
+    </p>
+  </div>
+
+  <div class="section__item--fw relative flex justify-center">
+    <div
+      class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-[-1] h-[12rem] overflow-hidden"
+    >
+      <Marquee>
+        {
+          repeat(10).map((_, i) => (
+            <MarqueeSlide>
+              <img
+                class="h-full aspect-[16/9] object-cover rounded-xl"
+                src={getRandomUnsplashImage({
+                  w: 400,
+                  h: 300,
+                  tags: ["people", "key-" + i],
+                })}
+              />
+            </MarqueeSlide>
+          ))
+        }
+      </Marquee>
+    </div>
+
+    <div
+      class="relative py-20 px-36 bg-white rounded-xl border text-center transition duration-[1s] hover:scale-105"
+    >
+      <form class="absolute inset-0 opacity-0 w-full h-full">
+        <input type="file" class="w-full h-full block" />
+      </form>
+      <p class="text-2xl">Select video to upload</p>
+      <p class="text-lg mt-2">Or drag and drop here</p>
+      <button class="my-8 btn btn--primary">Upload videos for free</button>
+      <p class="text-lg opacity-50">No credit card or account needed</p>
+    </div>
+  </div>
+
+  <div class="text-lg text-center">
+    <p>Want to upload a video link? <a href="#todo">Clip from URL</a></p>
+  </div>
+</section>

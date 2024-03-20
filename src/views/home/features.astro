@@ -1,0 +1,46 @@
+---
+import { getRandomUnsplashImage } from "@/utils/get-random";
+const getImageUrl = () => getRandomUnsplashImage({ w: 600, h: 500 });
+---
+
+<section class="section py-48">
+  <div class="mx-auto max-w-[62rem] space-y-40">
+    <div class="flex gap-20 [&>*]:flex-[1_1]">
+      <div class="">
+        <img
+          src={getImageUrl()}
+          class="aspect-[16/12] object-cover rounded-xl"
+        />
+      </div>
+      <div class="flex flex-col justify-center gap-4">
+        <h2 class="text-5xl font-semibold leading-[1.2]">
+          Upload and share your videos instantly
+        </h2>
+        <p class="text-lg">
+          The fastest video uploader on the web — don't take our word for it,
+          try it! After your videos are uploaded, stream in 4K UHD (60fps). No
+          home theater necessary
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-20 [&>*]:flex-[1_1]">
+      <div class="order-2">
+        <img
+          src={getImageUrl()}
+          class="aspect-[16/12] object-cover rounded-xl"
+        />
+      </div>
+      <div class="flex flex-col justify-center gap-4">
+        <h2 class="text-5xl font-semibold leading-[1.2]">
+          Video editing that gets out of your way
+        </h2>
+        <p class="text-lg">
+          With one-click resizing to landscape, square, or vertical formats, you
+          can get back hours of time while creating videos for every platform
+          and channel
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

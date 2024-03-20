@@ -1,16 +1,16 @@
 ---
-
+import LayoutBase from "@/layouts/layout-base.astro";
+import Hero from "@/views/home/hero.astro";
+import CustomerLogos from "@/views/home/customer-logos.astro";
+import Features from "@/views/home/features.astro";
+import Testimonials from "@/views/home/testimonials.astro";
+import CtaGetStarted from "@/views/home/cta-get-started.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<LayoutBase pageTitle="Home">
+  <Hero />
+  <CustomerLogos />
+  <Features />
+  <Testimonials />
+  <CtaGetStarted />
+</LayoutBase>

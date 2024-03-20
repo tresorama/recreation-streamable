@@ -1,0 +1,76 @@
+<div class="marquee no-js">
+  <div class="marquee__track">
+    <slot />
+  </div>
+</div>
+
+<style>
+  /* If no JS */
+  .marquee.no-js .marquee__track {
+    animation: none !important;
+  }
+
+  .marquee {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    position: relative;
+  }
+
+  .marquee--edge-shadow {
+    mask: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 1) 20%),
+      linear-gradient(to left, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 1) 20%);
+    mask-size: 50%, 50%;
+    mask-position:
+      0% 0%,
+      100% 0%;
+    mask-repeat: no-repeat;
+  }
+
+  .marquee__track {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+
+    /* Autoscroll Animation */
+    --item-count: 10;
+    --animation-duration: calc(15s * var(--items-count));
+    animation: marquee var(--animation-duration) infinite linear;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee__track:hover {
+    animation-play-state: paused;
+  }
+  .marquee__slide {
+  }
+</style>
+
+<script>
+  (() => {
+    const marquee = document.querySelector<HTMLDivElement>(`.marquee`);
+    const marqueeTrack =
+      marquee?.querySelector<HTMLDivElement>(`.marquee__track`);
+    if (!marquee || !marqueeTrack) return;
+
+    // mutate DOM
+    marquee.classList.remove("no-js");
+    marquee.style.setProperty(
+      "--items-count",
+      String([...marqueeTrack.children].length)
+    );
+
+    [...marqueeTrack.children].forEach((slide) => {
+      const clone = slide.cloneNode(true) as HTMLElement;
+      clone.classList.add("clone");
+      marqueeTrack.append(clone);
+    });
+  })();
+</script>
