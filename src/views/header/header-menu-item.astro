@@ -1,0 +1,27 @@
+---
+import type { NavItem } from "./header-menu.astro";
+
+type Props = { item: NavItem; level: number };
+
+const { item, level } = Astro.props;
+---
+
+<li data-mega-menu-3b="menu-item">
+  {item.type === "raw-html" && <div set:html={item.content} />}
+  {
+    item.type === "menu-item" && (
+      <Fragment>
+        <a href={item.url}>{item.label}</a>
+        {item.children && (
+          <div data-mega-menu-3b="submenu">
+            <ul>
+              {item.children.map((subItem) => (
+                <Astro.self item={subItem} level={level + 1} />
+              ))}
+            </ul>
+          </div>
+        )}
+      </Fragment>
+    )
+  }
+</li>

@@ -1,0 +1,103 @@
+---
+import HeaderMenuItem from "./header-menu-item.astro";
+
+type NavItem_MenuItem = {
+  type: "menu-item";
+  url: string;
+  label: string;
+  children?: NavItem[];
+};
+type NavItem_RawHtml = {
+  type: "raw-html";
+  content: string;
+};
+export type NavItem = NavItem_MenuItem | NavItem_RawHtml;
+
+const navItems: NavItem[] = [
+  {
+    type: "menu-item",
+    url: "#",
+    label: "Tools",
+    children: [
+      {
+        type: "menu-item",
+        url: "#",
+        label: "Upload",
+        children: [
+          { type: "menu-item", url: "#", label: "Upload Video" },
+          { type: "menu-item", url: "#", label: "Clip from URL" },
+          { type: "menu-item", url: "#", label: "Backup Video" },
+        ],
+      },
+      {
+        type: "menu-item",
+        url: "#",
+        label: "Edit",
+        children: [
+          { type: "menu-item", url: "#", label: "Crop Video" },
+          { type: "menu-item", url: "#", label: "Mute Video" },
+          { type: "menu-item", url: "#", label: "Merge Video" },
+          { type: "menu-item", url: "#", label: "Trim Video" },
+          { type: "menu-item", url: "#", label: "Rotate Video" },
+          { type: "menu-item", url: "#", label: "Compress Video" },
+        ],
+      },
+      {
+        type: "menu-item",
+        url: "#",
+        label: "Manage",
+        children: [
+          { type: "menu-item", url: "#", label: "Simple Video Manager" },
+          { type: "menu-item", url: "#", label: "Video Privacy" },
+          { type: "menu-item", url: "#", label: "Password Protected Video" },
+        ],
+      },
+      {
+        type: "menu-item",
+        url: "#",
+        label: "Share",
+        children: [
+          { type: "menu-item", url: "#", label: "Share Video Link" },
+          { type: "menu-item", url: "#", label: "Send Multiple Videos" },
+          { type: "menu-item", url: "#", label: "Embed Video" },
+          { type: "menu-item", url: "#", label: "Download Video" },
+        ],
+      },
+    ],
+  },
+  { type: "menu-item", url: "#", label: "Pricing" },
+  { type: "menu-item", url: "#", label: "Blog" },
+  { type: "menu-item", url: "#", label: "Login" },
+  {
+    type: "raw-html",
+    content: `
+    <a href="#" class="btn btn--primary whitespace-nowrap w-full my-4 min-[1100px]:w-auto min-[1100px]:my-0">
+      Sign up for free
+    </a>
+    `,
+  },
+];
+---
+
+<mega-menu-3b
+  id="DEMO-MEGA-MENU"
+  data-desktop-min-width="1100px"
+  data-desktop-open-on-hover
+>
+  <ul data-mega-menu-3b="menu">
+    {navItems.map((item) => <HeaderMenuItem item={item} level={1} />)}
+  </ul>
+</mega-menu-3b>
+
+<mega-menu-3b-mobile-toggler
+  target="DEMO-MEGA-MENU"
+  class="min-[1100px]:hidden"
+>
+  <button>Menu</button>
+</mega-menu-3b-mobile-toggler>
+
+<script>
+  import "./mega-menu-3b";
+  import "./mega-menu-3b.style.css";
+  import "./mega-menu-3b.overwrite.css";
+</script>

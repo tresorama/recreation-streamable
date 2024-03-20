@@ -6,18 +6,34 @@ import MarqueeSlide from "./marquee-slide.astro";
 const repeat = (times: number) => new Array(times).fill("");
 ---
 
-<section class="section py-28 space-y-28">
-  <div class="space-y-8">
+<section class="section py-28 justify-items-center gap-y-28">
+  <div class="space-y-8 relative">
     <h1 class="mx-auto text-7xl font-semibold text-center">
       Video hosting made easy
     </h1>
-    <p class="mx-auto max-w-[45rem] text-2xl text-center">
+    <!-- Illustration -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="49"
+      height="62"
+      class="absolute bottom-full left-full text-amber-500"
+      ><path
+        d="M 5.619 55.529 C 3.823 49.312 4.873 37.459 23.444 39.78 C 37.124 41.489 42.098 46.411 38.782 49.727 C 35.466 53.042 18.884 49.727 22.201 26.932 C 24.802 9.054 38.367 4.138 45 4.552"
+        fill="transparent"
+        stroke-width="4"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+      </path>
+    </svg>
+    <p class="mx-auto max-w-[40rem] text-2xl text-center">
       Join thousands of businesses and creators who trust Streamable to upload
       and share their videos.
     </p>
   </div>
 
-  <div class="section__item--fw relative flex justify-center">
+  <div class="section__item--fw w-full relative flex justify-center">
     <div
       class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-[-1] h-[12rem] overflow-hidden"
     >
@@ -55,4 +71,22 @@ const repeat = (times: number) => new Array(times).fill("");
   <div class="text-lg text-center">
     <p>Want to upload a video link? <a href="#todo">Clip from URL</a></p>
   </div>
+
+  <!-- Illustration -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="537"
+    height="446"
+    class="absolute left-0 -translate-x-1/3 top-0 text-green-500 pointer-events-none"
+  >
+    <path
+      d="M 96.293 2 C 79.626 37.667 32.493 119 5.293 143 C -28.707 173 209.793 -12.944 297.293 61 C 368.293 121 228.626 293 154.293 368 C 249.959 323 333.5 319.5 419.5 345.5"
+      fill="transparent"
+      stroke-width="4"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+    </path>
+  </svg>
 </section>

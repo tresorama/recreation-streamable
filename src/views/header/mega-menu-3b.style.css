@@ -1,0 +1,106 @@
+mega-menu-3b {
+  display: block;
+  height: 100%;
+  width: 100%;
+  --anim-time-multiplier: 1;
+}
+mega-menu-3b ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ==========================================
+Mobile 
+============================================== */
+
+mega-menu-3b[data-is-mobile] [data-mega-menu-3b="menu"] {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  /* Exit Aniamtion */
+  pointer-events: none;
+  visibility: hidden;
+  /* transform: scaleY(0);
+  transform-origin: top left;
+  transition: visibility 0s 0.4s, transform 0.2s 0.2s; */
+}
+mega-menu-3b[data-is-mobile][data-is-opened-mobile] [data-mega-menu-3b="menu"] {
+  /* Enter Aniamtion */
+  pointer-events: all;
+  visibility: visible;
+  /* transform: scaleY(1);
+  transition: visibility 0s, transform 0.2s; */
+}
+mega-menu-3b[data-is-mobile] [data-mega-menu-3b="menu-item"][data-level="1"] {
+  /* Exit Aniamtion */
+  /* opacity: 0;
+  transition: opacity 0.2s 0s; */
+}
+mega-menu-3b[data-is-mobile][data-is-opened-mobile] [data-mega-menu-3b="menu-item"][data-level="1"] {
+  /* Enter Aniamtion */
+  /* opacity: 1;
+  transition: opacity 0.2s 0.2s; */
+}
+mega-menu-3b[data-is-mobile] [data-mega-menu-3b="submenu"] {
+  display: none;
+}
+mega-menu-3b[data-is-mobile] [data-mega-menu-3b="menu-item"][open] > [data-mega-menu-3b="submenu"] {
+  display: block;
+}
+
+/* ==========================================
+Desktop 
+============================================== */
+
+mega-menu-3b[data-is-desktop] {
+  display: block;
+}
+mega-menu-3b[data-is-desktop] [data-mega-menu-3b="menu"] {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+mega-menu-3b[data-is-desktop] [data-mega-menu-3b="menu-item"][data-level="1"] {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+mega-menu-3b[data-is-desktop] [data-mega-menu-3b="submenu"] {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  /* Exit Animation */
+  pointer-events: none;
+  visibility: hidden;
+}
+mega-menu-3b[data-is-desktop] [open] > [data-mega-menu-3b="submenu"] {
+  /* Enter Animation */
+  pointer-events: all;
+  visibility: visible;
+  /* transition: visibility 0s; */
+  /* animation: mega-menu-3b--desktop--submenu-enter 1 both; */
+  /* animation-duration: calc(var(--anim-time-multiplier) * 0.3s); */
+}
+mega-menu-3b[data-is-desktop] [data-mega-menu-3b="submenu"] * {
+  /* Exit Animation */
+  pointer-events: none;
+  opacity: 0;
+  /* animation: mega-menu-3b--desktop--submenu-children-exit 1 both; */
+  /* animation-duration: calc(var(--anim-time-multiplier) * 0.3s); */
+}
+mega-menu-3b[data-is-desktop] [open] > [data-mega-menu-3b="submenu"] * {
+  /* Enter Animation */
+  pointer-events: all;
+  opacity: 1;
+  /* animation: mega-menu-3b--desktop--submenu-children-enter 1 both; */
+  /* animation-duration: calc(var(--anim-time-multiplier) * 0.3s); */
+  /* animation-delay: calc(var(--item-index--desktop, 0) * 0.05s * var(--anim-time-multiplier)); */
+}

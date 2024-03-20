@@ -1,0 +1,15 @@
+---
+import Logo from "@/views/ui/logo.astro";
+import HeaderMenu from "./header-menu.astro";
+---
+
+<header class="section z-20 fixed top-0 inset-x-0 h-[5rem] bg-white border-b">
+  <nav class="h-full w-full flex justify-between items-center gap-8">
+    <div class="">
+      <Logo />
+    </div>
+
+    <HeaderMenu />
+  </nav>
+</header>
+<div class="header-fixed-spacer h-[5rem]"></div>
