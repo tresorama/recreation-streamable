@@ -79,25 +79,26 @@ const navItems: NavItem[] = [
 ];
 ---
 
-<mega-menu-3b
-  id="DEMO-MEGA-MENU"
+<script>
+  import "./wc/two-mega-menu";
+  import "./two-mega-menu.overwrite.css";
+</script>
+
+<two-mega-menu
+  id="header-navigation-mega-menu"
   data-desktop-min-width="1100px"
+  data-desktop-open-on-click
   data-desktop-open-on-hover
+  data-mobile-close-on-click-outside
 >
   <ul data-mega-menu-3b="menu">
     {navItems.map((item) => <HeaderMenuItem item={item} level={1} />)}
   </ul>
-</mega-menu-3b>
+</two-mega-menu>
 
-<mega-menu-3b-mobile-toggler
-  target="DEMO-MEGA-MENU"
+<two-mega-menu-mobile-toggler
+  target-selector="#header-navigation-mega-menu"
   class="min-[1100px]:hidden"
 >
   <button>Menu</button>
-</mega-menu-3b-mobile-toggler>
-
-<script>
-  import "./mega-menu-3b";
-  import "./mega-menu-3b.style.css";
-  import "./mega-menu-3b.overwrite.css";
-</script>
+</two-mega-menu-mobile-toggler>

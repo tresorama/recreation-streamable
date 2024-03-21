@@ -1,9 +1,5 @@
 ---
-import { getRandomUnsplashImage } from "@/utils/get-random";
-import Marquee from "./marquee.astro";
-import MarqueeSlide from "./marquee-slide.astro";
-
-const repeat = (times: number) => new Array(times).fill("");
+import HeroMarquee from "./hero-marquee.astro";
 ---
 
 <section class="section py-28 justify-items-center gap-y-28">
@@ -27,37 +23,18 @@ const repeat = (times: number) => new Array(times).fill("");
       >
       </path>
     </svg>
-    <p class="mx-auto max-w-[40rem] text-2xl text-center">
+    <p class="mx-auto max-w-[40rem] text-2xl text-center text-neutral-500">
       Join thousands of businesses and creators who trust Streamable to upload
       and share their videos.
     </p>
   </div>
 
   <div class="section__item--fw w-full relative flex justify-center">
-    <div
-      class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-[-1] h-[12rem] overflow-hidden"
-    >
-      <Marquee>
-        {
-          repeat(10).map((_, i) => (
-            <MarqueeSlide>
-              <img
-                class="h-full aspect-[16/9] object-cover rounded-xl"
-                src={getRandomUnsplashImage({
-                  w: 400,
-                  h: 300,
-                  tags: ["people", "key-" + i],
-                })}
-              />
-            </MarqueeSlide>
-          ))
-        }
-      </Marquee>
+    <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-[-1] h-[12rem] overflow-hidden">
+      <HeroMarquee />
     </div>
 
-    <div
-      class="relative py-20 px-36 bg-white rounded-xl border text-center transition duration-[1s] hover:scale-105"
-    >
+    <div class="relative py-20 px-36 bg-white rounded-xl border text-center transition duration-[1s] hover:scale-105">
       <form class="absolute inset-0 opacity-0 w-full h-full">
         <input type="file" class="w-full h-full block" />
       </form>

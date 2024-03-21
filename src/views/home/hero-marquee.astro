@@ -1,0 +1,27 @@
+---
+import { getRandomUnsplashImage } from "@/utils/get-random";
+const repeat = (times: number) => new Array(times).fill("");
+---
+
+<script>
+  import "./wc/two-marquee";
+</script>
+
+<div class="h-[10rem]">
+  <two-marquee style="--gap: 1rem;--animation-duration: 8s">
+    {
+      repeat(10).map((_, i) => (
+        <div>
+          <img
+            class="h-full aspect-[16/9] object-cover rounded-xl"
+            src={getRandomUnsplashImage({
+              w: 400,
+              h: 300,
+              tags: ["people", "key-" + i],
+            })}
+          />
+        </div>
+      ))
+    }
+  </two-marquee>
+</div>

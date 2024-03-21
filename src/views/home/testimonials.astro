@@ -20,22 +20,20 @@ const testimonials = [
 ---
 
 <section class="section pb-28">
-  <h2
-    class="mx-auto max-w-[50rem] text-5xl font-semibold leading-[1.2] text-center"
-  >
+  <h2 class="mx-auto max-w-[50rem] text-5xl font-semibold leading-[1.2] text-center">
     Streamable is loved by over 50 million users and customers from 122
     countries
   </h2>
-  <div class="mt-24 flex gap-10">
+  <div class="mt-24 flex flex-col gap-10 md:flex-row">
     {
       testimonials.map((item) => (
         <div class="flex-1 p-10 flex flex-col gap-10 justify-between border rounded-lg">
-          <p class="text-xl">{item.content}</p>
+          <p class="text-xl text-neutral-500">{item.content}</p>
           <div class="flex gap-4">
             <img class="rounded-full" src={item.avatar_image} />
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col justify-center">
               <span>{item.name}</span>
-              <span>{item.role}</span>
+              <span class="text-neutral-500">{item.role}</span>
             </div>
           </div>
         </div>

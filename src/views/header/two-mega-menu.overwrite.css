@@ -1,0 +1,131 @@
+/* =================================================== 
+
+      Desktop
+
+=================================================== */
+
+/* Outer Wrapper */
+two-mega-menu[data-is-desktop] {
+  position: unset;
+}
+/* Level 1 Submenu */
+two-mega-menu[data-is-desktop] [data-level="1"] > [data-mega-menu-3b="submenu"] {
+  padding: var(--spacing-16) var(--px-section) var(--spacing-16);
+  background: var(--color-white);
+  border: 0px solid var(--color-neutral-200);
+  border-width: 1px 0;
+  box-shadow: var(--box-shadow-xl);
+}
+two-mega-menu[data-is-desktop] [data-level="1"] > [data-mega-menu-3b="submenu"] > ul {
+  margin: 0 auto;
+  max-width: var(--container--md--max-width);
+  display: flex;
+  justify-content: space-between;
+}
+/* Level 1 Menu Item */
+two-mega-menu[data-is-desktop] [data-level="1"] {
+  flex: 1 1 0%;
+}
+two-mega-menu[data-is-desktop] [data-level="1"] > a {
+  padding: 0.5em 1.5em;
+  display: inline-flex;
+  gap: 0.5em;
+  font-size: var(--font-size-lg-0);
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--color-neutral-500);
+  border-radius: var(--border-radius-lg);
+}
+two-mega-menu[data-is-desktop] [data-level="1"][data-has-children] > a:after {
+  content: "→";
+  transform: rotate(90deg);
+  color: var(--color-neutral-500);
+}
+two-mega-menu[data-is-desktop] [data-level="1"][open] > a {
+  background: var(--color-neutral-200);
+}
+/* Level 2,3,4... Submenu */
+two-mega-menu[data-is-desktop] [data-level="1"][open] [data-mega-menu-3b="submenu"] {
+  display: block;
+  visibility: visible;
+  pointer-events: all;
+}
+two-mega-menu[data-is-desktop] :not([data-level="1"]) > [data-mega-menu-3b="submenu"] {
+  position: static;
+}
+/* Level 2 Menu Item */
+two-mega-menu[data-is-desktop] [data-level="2"] > a {
+  display: block;
+  padding-bottom: 1em;
+  font-size: var(--font-size-lg-0);
+  font-weight: 500;
+  color: var(--color-neutral-900);
+}
+/* Level 3,4,.. Menu Item */
+two-mega-menu[data-is-desktop] [data-level]:not([data-level="2"], [data-level="1"]) > a {
+  display: block;
+  padding: 0.5em 0;
+  color: var(--color-neutral-500);
+  transition: color 0.1s;
+}
+two-mega-menu[data-is-desktop] [data-level]:not([data-level="2"], [data-level="1"]):hover > a {
+  color: var(--color-neutral-700);
+}
+
+/* =================================================== 
+
+      Mobile
+
+=================================================== */
+
+/* Main Menu */
+two-mega-menu[data-is-mobile] [data-mega-menu-3b="menu"] {
+  padding: var(--spacing-4) var(--px-section);
+  background: var(--color-white);
+  box-shadow: var(--box-shadow-xl);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+/* Level 1 Menu Item */
+two-mega-menu[data-is-mobile] [data-level="1"] {
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+two-mega-menu[data-is-mobile] [data-level="1"] > a {
+  padding: 1em 1em;
+  margin: 0 -1em;
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+}
+two-mega-menu[data-is-mobile] [data-level="1"][data-has-children] > a:after {
+  content: "→";
+  transform: rotate(90deg);
+  color: var(--color-neutral-500);
+}
+two-mega-menu[data-is-mobile] [data-level="1"][open] > a {
+  background: var(--color-neutral-200);
+  border-radius: var(--border-radius-lg);
+}
+/* Level 1 submenu */
+two-mega-menu[data-is-mobile] [data-level="1"] > [data-mega-menu-3b="submenu"] {
+  padding-bottom: 3em;
+}
+/* Level 2,3,4... Submenu */
+two-mega-menu[data-is-mobile][data-is-opened-mobile] [data-level="1"][open] [data-mega-menu-3b="submenu"] {
+  position: static;
+  display: block;
+  visibility: visible;
+}
+/* Level 2 Menu Item */
+two-mega-menu[data-is-mobile] [data-level="2"] > a {
+  display: block;
+  padding: 1.5em 0 0.5em;
+  font-weight: 500;
+  color: var(--color-neutral-900);
+}
+/* Level 3,4,.. Menu Item */
+two-mega-menu[data-is-mobile] [data-level]:not([data-level="2"], [data-level="1"]) > a {
+  display: block;
+  padding: .5em 0;
+  color: var(--color-neutral-500);
+}
