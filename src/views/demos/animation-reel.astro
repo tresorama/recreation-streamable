@@ -1,0 +1,44 @@
+---
+const repeat = (times: number) => new Array(times).fill("");
+---
+
+<section class="section gap-y-12">
+  <h2>Animation</h2>
+
+  <div>
+    <h3>Dropdown</h3>
+    <button id="dropdown-trigger">Open Dropdown</button>
+    <div id="dropdown-target">
+      <div class="bg-lime-300 text-black p-3">Dropdown Content</div>
+    </div>
+  </div>
+  <script>
+    import { Dropdown } from "@/utils/ui-pattern/dropdown.ts";
+    new Dropdown(
+      document.querySelector("#dropdown-trigger") as HTMLElement,
+      document.querySelector("#dropdown-target") as HTMLElement
+    );
+  </script>
+
+  <div>
+    <h3>Accordion</h3>
+    <div id="accordion-wrapper" data-is-exclusive>
+      {
+        repeat(4).map(() => (
+          <div class="accordion-item">
+            <button class="accordion-toggler" data-accordion-toggler>
+              Open Accordion
+            </button>
+            <div class="accordion-content" data-accordion-content aria-hidden="true">
+              <div class="bg-lime-300 text-black p-3">Accordion Content</div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <script>
+    import { Accordion } from "@/utils/ui-pattern/accordion.ts";
+    new Accordion(document.querySelector("#accordion-wrapper") as HTMLElement);
+  </script>
+</section>

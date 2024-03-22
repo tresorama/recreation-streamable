@@ -1,4 +1,6 @@
 ---
+import Header from '@/views/header/header.astro';
+
 type Props = {
   pageTitle?: string;
 };
@@ -13,6 +15,7 @@ const { pageTitle = "My Site" } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
+    <Header/>
     <slot />
   </body>
 </html>

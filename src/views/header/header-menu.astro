@@ -15,6 +15,17 @@ export type NavItem = NavItem_MenuItem | NavItem_RawHtml;
 
 const navItems: NavItem[] = [
   {
+    type: 'menu-item',
+    url: '#',
+    label: 'Pages',
+    children: [
+      {type: 'menu-item', url: "#", label: 'Pages', children: [
+        {type: 'menu-item', url: '/', label: 'Home'},
+        {type: 'menu-item', url: '/demos', label: 'Demos'},
+      ]}
+    ]
+  },
+  {
     type: "menu-item",
     url: "#",
     label: "Tools",
