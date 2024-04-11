@@ -4,7 +4,7 @@ import HeroMarquee from "./hero-marquee.astro";
 
 <section class="section relative py-28 justify-items-center gap-y-20 md:gap-y-28">
   
-  <div class="space-y-8 relative">
+  <div class="space-y-8 relative overflow-hidden">
     <h1 class="mx-auto text-5xl font-semibold text-center md:text-7xl">
       Video hosting made easy
     </h1>
@@ -30,7 +30,7 @@ import HeroMarquee from "./hero-marquee.astro";
     </p>
   </div>
 
-  <div class="section__item--fw w-full relative flex justify-center">
+  <div class="section__item--full-width w-full relative flex justify-center">
     <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-[-1] h-[12rem] overflow-hidden">
       <HeroMarquee />
     </div>
@@ -46,8 +46,8 @@ import HeroMarquee from "./hero-marquee.astro";
     </div>
   </div>
 
-  <div class="text-lg text-center">
-    <p>Want to upload a video link? <a href="#todo">Clip from URL</a></p>
+  <div class="text-base text-center md:text-lg">
+    <p>Want to upload a video link? <a href="#todo" class="underline">Clip from URL</a></p>
   </div>
 
   <!-- Illustration -->

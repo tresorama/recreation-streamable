@@ -1,6 +1,7 @@
 /* Prevent FOUC */
 two-mega-menu:not(:defined) {
 	opacity: 0;
+  display: none;
 }
 
 /* =================================================== 

@@ -81,10 +81,21 @@ export default {
             gridColumn: "2/-2",
           },
         },
-        ".section__item--fw": {
+        ".section__item--full-width": {
           gridColumn: "1/-1",
         }
       });
+      // addComponents({
+      //   ".px-section": {
+      //     paddingRight: "var(--px-section)",
+      //     paddingLeft: "var(--px-section)",
+      //   },
+      //   ".container": {
+      //     maxWidth: "var(--container--md--max-width)",
+      //     marginLeft: "auto",
+      //     marginRight: "auto",
+      //   },
+      // });
       addComponents({
         ".btn": { "@apply inline-flex justify-center rounded-md border-0 px-4 py-2 text-base": {} },
         ".btn--primary": { "@apply bg-blue-500 text-white hover:bg-blue-600": {} },
