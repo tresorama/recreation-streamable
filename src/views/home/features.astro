@@ -3,9 +3,9 @@ import { getRandomUnsplashImage } from "@/utils/get-random";
 const getImageUrl = () => getRandomUnsplashImage({ w: 600, h: 500 });
 ---
 
-<section class="section py-48">
+<section class="section py-36 md:py-48">
   <div class="mx-auto max-w-[62rem] space-y-40">
-    <div class="flex flex-col gap-8 [&>*]:flex-[1_1] md:flex-row md:gap-20">
+    <div class="flex flex-col gap-8 [&>*]:flex-[1_1] md:flex-row md:gap-12 lg:gap-20">
       <div class="aspect-[16/12] relative bg-neutral-300 rounded-xl overflow-hidden">
         <img
           src={getImageUrl()}
@@ -24,7 +24,7 @@ const getImageUrl = () => getRandomUnsplashImage({ w: 600, h: 500 });
       </div>
     </div>
 
-    <div class="flex flex-col gap-8 [&>*]:flex-[1_1] md:flex-row md:gap-20">
+    <div class="flex flex-col gap-8 [&>*]:flex-[1_1] md:flex-row md:gap-12 lg:gap-20">
       <div class="aspect-[16/12] relative bg-neutral-300 rounded-xl overflow-hidden md:order-2">
         <img
           src={getImageUrl()}
