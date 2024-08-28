@@ -27,23 +27,18 @@ export const getRandomString = () => {
   return `${new Date().valueOf()}-${Number(Math.random() * 100000).toFixed(0)}`;
 };
 
-export const getRandomUnsplashImage = ({
-  tags = ['fun'],
+export const getRandomPicsumImage = ({
   w = 900,
   h = 700,
 }: {
-  tags?: string[],
-  w?: number,
-  h?: number,
+  w?: number;
+  h?: number;
 }) => {
-  const _tags = tags.join(",");
-  const rnds = getRandomString();
 
-  // const url = `https://source.unsplash.com/random/${w}x${h}/?${_tags}&last-mod=${rnds}`;
-
-  const url = new URL(`https://source.unsplash.com/random/${w}x${h}/`);
-  url.searchParams.append("last-mod", rnds);
-  url.searchParams.append(_tags, '');
-
+  // https://picsum.photos/200/300?random=1
+  const url = new URL(
+    `https://picsum.photos/${w}/${h}?random=${getRandomInteger(1, 2000)}`,
+  );
   return url.toString();
+
 };

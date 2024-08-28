@@ -1,5 +1,5 @@
 ---
-import { getRandomUnsplashImage } from "@/utils/get-random";
+import { getRandomPicsumImage } from "@/utils/get-random";
 const repeat = (times: number) => new Array(times).fill("");
 ---
 
@@ -14,10 +14,9 @@ const repeat = (times: number) => new Array(times).fill("");
         <div>
           <img
             class="h-full aspect-[16/9] object-cover rounded-xl"
-            src={getRandomUnsplashImage({
+            src={getRandomPicsumImage({
               w: 400,
               h: 300,
-              tags: ["people", "key-" + i],
             })}
           />
         </div>
